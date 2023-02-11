@@ -34,7 +34,8 @@ class TeamAdapter(val teamList: ArrayList<Team>):RecyclerView.Adapter<TeamAdapte
         }
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context,DetailsActivity::class.java)
-            intent.putExtra("teams",teamList.get(position))
+            //intent.putExtra("teams",teamList.get(position))
+            Singleton.chosenTeam = teamList.get(position)
             holder.itemView.context.startActivity(intent)
         }
     }

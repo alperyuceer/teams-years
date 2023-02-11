@@ -14,8 +14,12 @@ class DetailsActivity : AppCompatActivity() {
         setContentView(view)
 
         val intent = intent
-        val selectedTeamintent= intent.getSerializableExtra("teams") as Team
-        binding.teamYearText.text = selectedTeamintent.teamYear.toString()
+        //val selectedTeamintent= intent.getSerializableExtra("teams") as Team
+
+        val selectedTeam = Singleton.chosenTeam
+
+        binding.teamYearText.text = selectedTeam!!.teamYear.toString()
+
 
     }
 }
